@@ -15,7 +15,7 @@ class PaperSpider(scrapy.Spider):
        title = div.css('h4::text').extract()
        link = div.css( 'a').xpath('@href').extract()
 
-       items['title'] = year
+       items['title'] = title
        #items['papers']= paper
        #items['session'] = session
        items['link'] = link

@@ -25,11 +25,18 @@ class PaperscraperPipeline:
 
         #split title into specific db columns (year, session, subject etc)
 
-        del self.db.add_paper(id, board, qualification, subject, year, session, paper_type, link)
+        id = rand_gen()
+        board = "Edexcel"
+        qualification = "IGCSE"
+        subject = "Mathematics B"
+        title_split = self.title.split(" ")
+        year = title_split[1]
+        session = title_split[0]
+
+        return self.db.add_paper(id, board, qualification, subject, year, session, paper_type, link)
 
 
     def close_spider(self, spider):
         pass
         
-        
-
+    
